@@ -1,6 +1,13 @@
 import functions
 import PySimpleGUI as sg
 import time
+import os
+
+
+if not os.path.exists("todos.txt"):
+    with open("todos.txt", "w") as file:
+        pass
+
 
 sg.theme("DarkBlue13")
 
@@ -65,5 +72,6 @@ while True:
             break
         case sg.WINDOW_CLOSED:
             break
-
+# set-executionpolicy remotesigned -scope currentuser
+# pyinstaller --onefile --windowed --clean gui.py
 window.close()
